@@ -5,24 +5,65 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <div class="buttons">
-            <h2>KaTeX Equation Translator</h2>
+        <div class="top">
+            <h2>KaTeX Equation Editor</h2>
         </div>
+        <div class="top">
+            <div class="btn-group">
+                <button id="myBtn">Accents</button>
+                <button >Over/under</button>
+                <button >Greek letters</button>
+              </div>            
+        </div>
+
+
+
         <div class="input">
             <h5>Type equation here: </h5>
             <form id="enter">
                 <textarea placeholder="type here" id="inputbox" cols="80" rows="20" spellcheck="false"></textarea>
             </form>
         </div>
-        <button class="midbutton" type="button" onclick="inline()"> Inline Formula</button>
-        <button class="midbutton" type="button" onclick="display()"> Display Formula </button>
-
+        
+        <div class="top">
+            <div class="btn-group">
+                <button style="width:50%" onclick="inline()">Inline Formula</button>
+                <button style="width: 50%;"  onclick="display()">Display Formula</button>                    
+            </div>
+        </div>
         <div class="output">
             <h3>Formula</h3>
             <p id="rewrite"></p>
         </div>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close"> &times;</span>
+                <p>Buttons</p>
+                <div class="btn-group">
+                    <button onclick="insert('\\acute{}')">\(\acute{a}\)</button>
+                    <button onclick="insert('\\bar{}')">\(\bar{y}\)</button>
+                    <button onclick="insert('\\breve{}')">\(\breve{a}\)</button>
+                    <button onclick="insert('\\check{}')">\(\check{a}\)</button>
+                    <button onclick="insert('\\dot{}')">\(\dot{a}\)</button>
+                    <button onclick="insert('\\ddot{}')">\(\ddot{a}\)</button>
+                    <button onclick="insert('\\grave{}')">\(\grave{a}\)</button>
+                    <button onclick="insert('\\hat{\\theta}')">\(\hat{\theta}\)</button>
+                    <button onclick="insert('\\tilde{}')">\(\tilde{a}\)</button>
+                    <button onclick="insert('\\mathring{g}')">\(\mathring{g}\)</button>
+                    <button onclick="insert('\\vec{F}')">\(\vec{F}\)</button>
+                    <!-- <button onclick="insert('\\')">\(\\)</button> -->
+
+
+
+                </div>
+            </div>
+        </div>
+
+
     <script>
 
         function inline() {
@@ -38,6 +79,33 @@
             w.innerHTML = x;
             renderMathInElement(w, {})
         }
+
+        function insert(txt) {
+            // document.getElementById("inputbox").value += txt;
+            var target = document.getElementById("inputbox");
+            if (target.setRangeText) {
+                target.setRangeText(txt);
+            } else {
+            target.focus()
+            document.execCommand('insertText', false, txt);
+            }
+        }
+
+
+        var modal = document.getElementById("myModal"); // Get the modal
+        var btn = document.getElementById("myBtn"); // Get the button that opens the modal
+        var span = document.getElementsByClassName("close")[0]; // Get the <span> element that closes the modal
+        btn.onclick = function() {
+         modal.style.display = "block";
+        } // When the user clicks the button, open the modal 
+        span.onclick = function() {
+            modal.style.display = "none";
+        } // When the user clicks on <span> (x), close the modal
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }// When the user clicks anywhere outside of the modal, close it
 
     </script>
     </body>
