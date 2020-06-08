@@ -13,7 +13,7 @@
         </div>
         <div class="top">
             <div class="btn-group">
-                <button id="myBtn">Accents</button>
+                <button  id="myBtn01">Accents</button>
                 <button >Over/under</button>
                 <button >Greek letters</button>
               </div>            
@@ -39,7 +39,7 @@
             <p id="rewrite"></p>
         </div>
 
-        <div id="myModal" class="modal">
+        <div id="myModal01" class="modal">
             <div class="modal-content">
                 <span class="close"> &times;</span>
                 <p>Buttons</p>
@@ -89,23 +89,25 @@
             target.focus()
             document.execCommand('insertText', false, txt);
             }
+            modal01.style.display="none";
+
         }
 
+            var modal01 = document.getElementById("myModal01"); // Get the modal
+            var btn01 = document.getElementById("myBtn01"); // Get the button that opens the modal
+            var span = document.getElementsByClassName("close")[0]; // Get the <span> element that closes the modal
+            btn01.onclick = function() {
+            modal01.style.display = "block";
+            } // When the user clicks the button, open the modal 
+            span.onclick = function() {
+                modal01.style.display = "none";
+            } // When the user clicks on <span> (x), close the modal
+            window.onclick = function(event) {
+                if (event.target == modal01) {
+                    modal01.style.display = "none";
+                }
+            }// When the user clicks anywhere outside of the modal, close it
 
-        var modal = document.getElementById("myModal"); // Get the modal
-        var btn = document.getElementById("myBtn"); // Get the button that opens the modal
-        var span = document.getElementsByClassName("close")[0]; // Get the <span> element that closes the modal
-        btn.onclick = function() {
-         modal.style.display = "block";
-        } // When the user clicks the button, open the modal 
-        span.onclick = function() {
-            modal.style.display = "none";
-        } // When the user clicks on <span> (x), close the modal
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }// When the user clicks anywhere outside of the modal, close it
 
     </script>
     </body>
