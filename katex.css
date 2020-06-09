@@ -52,6 +52,7 @@ div {
     padding: 10px 24px; 
     cursor: pointer; 
     float: left; 
+    height: 60px;
   }
 .btn-group:after {
     content: "";
