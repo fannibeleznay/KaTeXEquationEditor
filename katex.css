@@ -73,8 +73,14 @@ div {
     visibility: visible;
   }
 
+  td {
+    border: 1px solid #84A9AC;
+  }
 
-  th:hover {
+  table{
+    border-spacing: 2px;
+  }
+  td:hover {
     background-color: #204051;
     color: white;
   }
