@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="katex.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="top">
+            <h2>KaTeX Equation Editor</h2>
+        </div>
+        <div class="top">
+            <div class="btn-group">
+                <button id = "myBtn01">Accents
+                    <span class="tooltiptext">
+                        <table>
+                            <tr>
+                                <th onclick="insert('\\acute{ }')"> \(\acute{a}\)</th>
+                                <th>\(\bar{y}\)</th>
+                                <th>\(\breve{a}\)</th>
+                                <th>\(\check{a}\)</th>
+                                <th>\(\dot{a}\)</th>
+                                <th>\(\ddot{a}\)</th>
+                                <th>\(\grave{a}\)</th>
+                                <th>\(\hat{\theta}\)</th>
+                            </tr>
+                            <tr>
+                                <th>\(\tilde{a}\)</th>
+                                <th>\(\mathring{g}\)</th>
+                                <th>\(\vec{F}\)</th>
+                                <th>\(\widehat{ac}\)</th>
+                                <th>\(\widetilde{ac}\)</th>
+                                <th>\(\utilde{AB}\)</th>
+                                <th>\(\overleftarrow{AB}\)</th>
+                                <th>\(\underleftarrow{AB}\)</th>
+                            </tr>
+                            <tr>
+                                <th>\(\overleftharpoon{ac}\)</th>
+                                <th>\(\underleftrightarrow{AB}\)</th>
+                                <th>\(\overleftrightarrow{AB}\)</th>
+                                <th>\(\overline{AB}\)</th>
+                                <th>\(\underline{AB}\)</th>
+                                <th>\(\widecheck{ac}\)</th>
+                                <th>\(\overgroup{AB}\)</th>
+                                <th>\(\undergroup{AB}\)</th>
+                            </tr>
+                            <tr>
+                                <th>\(\Overrightarrow{AB}\)</th>
+                                <th>\(\overrightarrow{AB}\)</th>
+                                <th>\(\underrightarrow{AB}\)</th>
+                                <th>\(\overrightharpoon{ac}\)</th>
+                                <th>\(\overbrace{AB}\)</th>
+                                <th>\(\underbrace{AB}\)</th>
+                                <th>\(\overlinesegment{AB}\)</th>
+                                <th>\(\underlinesegment{AB}\)</th>
+                            </tr>
+                        </table>
+                    </span>
+                </button>
+                <button id = "myBtn03" >Delimiters</button>
+                <button id = "myBtn02">Environments</button>
+            </div>            
+        </div>
+
+
+
+        <div class="input">
+            <h5>Type equation here: </h5>
+            <form id="enter">
+                <textarea placeholder="type here" id="inputbox" cols="80" rows="20" spellcheck="false"></textarea>
+            </form>
+        </div>
+        
+        <div class="top">
+            <div class="btn-group">
+                <button style="width:50%" onclick="inline()">Inline Formula</button>
+                <button style="width: 50%;"  onclick="display()">Display Formula</button>                    
+            </div>
+        </div>
+        <div class="output">
+            <h3>Formula</h3>
+            <p id="rewrite"></p>
+        </div>
+
+        <div id="myModal01" class="modal">
+            <div class="modal-content">
+                <span class="close"> &times;</span>
+                <h3>Accents</h3>
+                <div class="btn-group">
+                    <button onclick="insert('\\acute{ }')">\(\acute{a}\)</button>
+                    <button onclick="insert('\\bar{ }')">\(\bar{y}\)</button>
+                    <button onclick="insert('\\breve{ }')">\(\breve{a}\)</button>
+                    <button onclick="insert('\\check{ }')">\(\check{a}\)</button>
+                    <button onclick="insert('\\dot{ }')">\(\dot{a}\)</button>
+                    <button onclick="insert('\\ddot{ }')">\(\ddot{a}\)</button>
+                    <button onclick="insert('\\grave{ }')">\(\grave{a}\)</button>
+                    <button onclick="insert('\\hat{ }')">\(\hat{\theta}\)</button>
+                    <button onclick="insert('\\tilde{ }')">\(\tilde{a}\)</button>
+                    <button onclick="insert('\\mathring{ }')">\(\mathring{g}\)</button>
+                    <button onclick="insert('\\vec{ }')">\(\vec{F}\)</button>
+                    <!-- <button onclick="insert('\\')">\(\\)</button> -->
+                </div>
+
+                <div class="btn-group">
+                    <button onclick="insert('\\widehat{ }')">\(\widehat{ac}\)</button>
+                    <button onclick="insert('\\widetilde{ }')">\(\widetilde{ac}\)</button>
+                    <button onclick="insert('\\utilde{ }')">\(\utilde{AB}\)</button>
+                    <button onclick="insert('\\overleftarrow{ }')">\(\overleftarrow{AB}\)</button>
+                    <button onclick="insert('\\underleftarrow{ }')">\(\underleftarrow{AB}\)</button>
+                    <button onclick="insert('\\overleftharpoon{ }')">\(\overleftharpoon{ac}\)</button>
+                    <button onclick="insert('\\underleftrigtharrow{ }')">\(\underleftrightarrow{AB}\)</button>
+                    <button onclick="insert('\\overleftrightarrow{ }')">\(\overleftrightarrow{AB}\)</button>
+                    <button onclick="insert('\\overline{ }')">\(\overline{AB}\)</button>
+                    <button onclick="insert('\\underline{ }')">\(\underline{AB}\)</button>
+                    <button onclick="insert('\\widecheck{ }')">\(\widecheck{ac}\)</button>
+                    <button onclick="insert('\\overgroup{ }')">\(\overgroup{AB}\)</button>
+                    <button onclick="insert('\\undergroup{ }')">\(\undergroup{AB}\)</button>
+                    <button onclick="insert('\\Overrightarrow{ }')">\(\Overrightarrow{AB}\)</button>
+                    <button onclick="insert('\\overrightarrow{ }')">\(\overrightarrow{AB}\)</button>
+                    <button onclick="insert('\\underrightarrow{ }')">\(\underrightarrow{AB}\)</button>
+                    <button onclick="insert('\\overrightharpoon{ }')">\(\overrightharpoon{ac}\)</button>
+                    <button onclick="insert('\\overbrace{ }')">\(\overbrace{AB}\)</button>
+                    <button onclick="insert('\\underbrace{ }')">\(\underbrace{AB}\)</button>
+                    <button onclick="insert('\\overlinesegment{ }')">\(\overlinesegment{AB}\)</button>
+                    <button onclick="insert('\\underlinesegment{ }')">\(\underlinesegment{AB}\)</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="myModal03" class="modal">
+            <div class="modal-content">
+                <span class="close"> &times;</span>
+                <div class="btn-group">
+                    <button onclick="insert('\\lvert\\rvert')">\(\lvert\rvert\)</button>
+                    <button onclick="insert('\\lang\\rang')">\(\lang\rang\)</button>
+                    <button onclick="insert('\\lparen\\rparen')">\(\lparen\rparen\)</button>
+                    <button onclick="insert('\\lbrack\\rbrack')">\(\lbrack\rbrack\)</button>
+                    <button onclick="insert('\\lbrace\\rbrace')">\(\lbrace\rbrace\)</button>
+                    <button onclick="insert('\\vert')">\(\vert\)</button>
+                    <button onclick="insert('\\Vert')">\(\Vert\)</button>
+                    <button onclick="insert('\\lt\\gt')">\(\lt\gt\)</button>
+                    <button onclick="insert('\\lceil\\rceil')">\(\lceil\rceil\)</button>
+                    <button onclick="insert('\\lfloor\\rfloor')">\(\lfloor\rfloor\)</button>
+                    <button onclick="insert('\\lmoustache\\rmoustache')">\(\lmoustache\rmoustache\)</button>
+                    <button onclick="insert('\\lgroup\\rgroup')">\(\lgroup\rgroup\)</button>
+                    <button onclick="insert('\\ulcorner\\urcorner')">\(\ulcorner\urcorner\)</button>
+                    <button onclick="insert('\\llcorner\\lrcorner')">\(\llcorner\lrcorner\)</button>
+                    <button onclick="insert('\\llbracket\\rrbracket')">\(\llbracket\rrbracket\)</button>
+                    <button onclick="insert('\\lBrace\\rBrace')">\(\lBrace\rBrace\)</button>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div id="myModal02" class="modal">
+            <div class="modal-content">
+                <span class="close"> &times;</span>
+                <div class="btn-group">
+                    <button onclick="insert('\\widehat{}')">\(\widehat{ac}\)</button>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- <div id="myModal03" class="modal">
+            <div class="modal-content">
+                <span class="close"> &times;</span>
+                <p>Buttons</p>
+                <div class="btn-group">
+                    <button onclick="insert('\\')">\(\\)</button>
+                    <button onclick="insert('\\')">\(\\)</button>
+                    <button onclick="insert('\\')">\(\\)</button>
+                    <button onclick="insert('\\')">\(\\)</button>
+                    <button onclick="insert('\\')">\(\\)</button>
+                    <button onclick="insert('\\')">\(\\)</button>
+                    <button onclick="insert('\\')">\(\\)</button>
+                    <button onclick="insert('\\')">\(\\)</button>
+                    <button onclick="insert('\\')">\(\\)</button>
+                    <button onclick="insert('\\')">\(\\)</button>
+
+                </div>
+            </div>
+        </div> -->
+
+
+    <script>
+
+        function inline() {
+            var x = "\\(" + document.getElementById("inputbox").value + "\\)";
+            var w = document.getElementById("rewrite");
+            w.innerHTML = x;
+            renderMathInElement(w, {})
+        }
+
+        function display() {
+            var x = "\\[" + document.getElementById("inputbox").value + "\\]";
+            var w = document.getElementById("rewrite");
+            w.innerHTML = x;
+            renderMathInElement(w, {})
+        }
+
+        function insert(txt) {
+            // document.getElementById("inputbox").value += txt;
+            var target = document.getElementById("inputbox");
+            if (target.setRangeText) {
+                target.setRangeText(txt);
+            } else {
+            target.focus()
+            document.execCommand('insertText', false, txt);
+            }
+            modal01.style.display="none";
+            modal02.style.display="none";
+            modal03.style.display="none";
+        }
+
+// Button 1: accents
+            var modal01 = document.getElementById("myModal01"); // Get the modal
+            var modal02 = document.getElementById("myModal02"); 
+            var modal03 = document.getElementById("myModal03"); 
+
+            var btn01 = document.getElementById("myBtn01"); // Get the button that opens the modal
+            var btn02 = document.getElementById("myBtn02"); 
+            var btn03 = document.getElementById("myBtn03"); 
+
+            var span = document.getElementsByClassName("close"); // Get the <span> element that closes the modal
+            
+            btn01.onclick = function() {
+                modal01.style.display = "block";
+            } // When the user clicks the button, open the modal 
+            btn02.onclick = function() {
+                modal02.style.display = "block";
+            }  
+            btn03.onclick = function() {
+                modal03.style.display = "block";
+            }  
+
+
+
+
+            span[0].onclick = function() {
+                modal01.style.display = "none";
+            } // When the user clicks on <span> (x), close the modal
+            span[2].onclick = function() {
+                modal02.style.display = "none";
+            }
+            span[1].onclick = function() {
+                modal03.style.display = "none";
+            }
+            
+            
+
+            
+            window.onclick = function(event) {
+                if (event.target == modal01) {
+                    modal01.style.display = "none";
+                }
+                if (event.target == modal02) {
+                    modal02.style.display = "none";
+                }
+                if (event.target == modal03) {
+                    modal03.style.display = "none";
+                }
+            }// When the user clicks anywhere outside of the modal, close it
+
+
+    </script>
+    </body>
+</html>

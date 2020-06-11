@@ -13,8 +13,78 @@
         </div>
         <div class="top">
             <div class="btn-group">
-                <button id = "myBtn01">Accents<span class="tooltiptext">\(\acute{a}\)</span></button>
-                <button id = "myBtn03" >Delimiters</button>
+                <button id = "myBtn01">Accents
+                    <span class="tooltiptext">
+                        <table>
+                            <tr>
+                                <th onclick="insert('\\acute{ }')"> \(\acute{a}\)</th>
+                                <th onclick="insert('\\bar{ }')">\(\bar{y}\)</th>
+                                <th onclick="insert('\\breve{ }')">\(\breve{a}\)</th>
+                                <th onclick="insert('\\check{ }')">\(\check{a}\)</th>
+                                <th onclick="insert('\\dot{ }')">\(\dot{a}\)</th>
+                                <th onclick="insert('\\ddot{ }')">\(\ddot{a}\)</th>
+                                <th onclick="insert('\\grave{ }')">\(\grave{a}\)</th>
+                                <th onclick="insert('\\hat{ }')">\(\hat{\theta}\)</th>
+                            </tr>
+                            <tr>
+                                <th onclick="insert('\\tilde{ }')">\(\tilde{a}\)</th>
+                                <th onclick="insert('\\mathring{ }')">\(\mathring{g}\)</th>
+                                <th onclick="insert('\\vec{ }')">\(\vec{F}\)</th>
+                                <th onclick="insert('\\widehat{ }')">\(\widehat{ac}\)</th>
+                                <th onclick="insert('\\widetilde{ }')">\(\widetilde{ac}\)</th>
+                                <th onclick="insert('\\utilde{ }')">\(\utilde{AB}\)</th>
+                                <th onclick="insert('\\overleftarrow{ }')">\(\overleftarrow{AB}\)</th>
+                                <th onclick="insert('\\underleftarrow{ }')">\(\underleftarrow{AB}\)</th>
+                            </tr>
+                            <tr>
+                                <th onclick="insert('\\overleftharpoon{ }')">\(\overleftharpoon{ac}\)</th>
+                                <th onclick="insert('\\underleftrigtharrow{ }')">\(\underleftrightarrow{AB}\)</th>
+                                <th onclick="insert('\\overleftrightarrow{ }')">\(\overleftrightarrow{AB}\)</th>
+                                <th onclick="insert('\\overline{ }')">\(\overline{AB}\)</th>
+                                <th onclick="insert('\\underline{ }')">\(\underline{AB}\)</th>
+                                <th onclick="insert('\\widecheck{ }')">\(\widecheck{ac}\)</th>
+                                <th onclick="insert('\\overgroup{ }')">\(\overgroup{AB}\)</th>
+                                <th onclick="insert('\\undergroup{ }')">\(\undergroup{AB}\)</th>
+                            </tr>
+                            <tr>
+                                <th onclick="insert('\\Overrightarrow{ }')">\(\Overrightarrow{AB}\)</th>
+                                <th onclick="insert('\\overrightarrow{ }')">\(\overrightarrow{AB}\)</th>
+                                <th onclick="insert('\\underrightarrow{ }')">\(\underrightarrow{AB}\)</th>
+                                <th onclick="insert('\\overrightharpoon{ }')">\(\overrightharpoon{ac}\)</th>
+                                <th onclick="insert('\\overbrace{ }')">\(\overbrace{AB}\)</th>
+                                <th onclick="insert('\\underbrace{ }')">\(\underbrace{AB}\)</th>
+                                <th onclick="insert('\\overlinesegment{ }')">\(\overlinesegment{AB}\)</th>
+                                <th onclick="insert('\\underlinesegment{ }')">\(\underlinesegment{AB}\)</th>
+                            </tr>
+                        </table>
+                    </span>
+                </button>
+                <button id = "myBtn03" >Delimiters
+                    <span class="tooltiptext">
+                        <table>
+                            <tr>
+                                <th onclick="insert(' \\lvert \\rvert ')">\(\lvert\dots\rvert\)</th>
+                                <th onclick="insert(' \\lang \\rang ')">\(\lang \dots \rang\)</th>
+                                <th onclick="insert(' \\lparen \\rparen ')">\(\lparen \dots \rparen\)</th>
+                                <th onclick="insert(' \\lbrack \\rbrack ')">\(\lbrack \dots \rbrack\)</th>
+                                <th onclick="insert(' \\lbrace \\rbrace ')">\(\lbrace \dots \rbrace\)</th>
+                                <th onclick="insert(' \\vert ')">\(\vert\)</th>
+                                <th onclick="insert(' \\Vert ')">\(\Vert\)</th>
+                                <th onclick="insert(' \\lt \\gt ')">\(\lt \dots \gt\)</th>
+                            </tr>
+                            <tr>
+                                <th onclick="insert('\\lceil\\rceil')">\(\lceil \rceil\)</th>
+                                <th onclick="insert('\\lfloor\\rfloor')">\(\lfloor\rfloor\)</th>
+                                <th onclick="insert('\\lmoustache\\rmoustache')">\(\lmoustache\rmoustache\)</th>
+                                <th onclick="insert('\\lgroup\\rgroup')">\(\lgroup\rgroup\)</th>
+                                <th onclick="insert('\\ulcorner\\urcorner')">\(\ulcorner\urcorner\)</th>
+                                <th onclick="insert('\\llcorner\\lrcorner')">\(\llcorner\lrcorner\)</th>
+                                <th onclick="insert('\\llbracket\\rrbracket')">\(\llbracket\rrbracket\)</th>
+                                <th onclick="insert('\\lBrace\\rBrace')">\(\lBrace\rBrace\)</th>
+                            </tr>
+                        </table>
+                    </span>
+                </button>
                 <button id = "myBtn02">Environments</button>
             </div>            
         </div>
@@ -39,109 +109,8 @@
             <p id="rewrite"></p>
         </div>
 
-        <div id="myModal01" class="modal">
-            <div class="modal-content">
-                <span class="close"> &times;</span>
-                <h3>Accents</h3>
-                <div class="btn-group">
-                    <button onclick="insert('\\acute{ }')">\(\acute{a}\)</button>
-                    <button onclick="insert('\\bar{ }')">\(\bar{y}\)</button>
-                    <button onclick="insert('\\breve{ }')">\(\breve{a}\)</button>
-                    <button onclick="insert('\\check{ }')">\(\check{a}\)</button>
-                    <button onclick="insert('\\dot{ }')">\(\dot{a}\)</button>
-                    <button onclick="insert('\\ddot{ }')">\(\ddot{a}\)</button>
-                    <button onclick="insert('\\grave{ }')">\(\grave{a}\)</button>
-                    <button onclick="insert('\\hat{ }')">\(\hat{\theta}\)</button>
-                    <button onclick="insert('\\tilde{ }')">\(\tilde{a}\)</button>
-                    <button onclick="insert('\\mathring{ }')">\(\mathring{g}\)</button>
-                    <button onclick="insert('\\vec{ }')">\(\vec{F}\)</button>
-                    <!-- <button onclick="insert('\\')">\(\\)</button> -->
-                </div>
 
-                <div class="btn-group">
-                    <button onclick="insert('\\widehat{ }')">\(\widehat{ac}\)</button>
-                    <button onclick="insert('\\widetilde{ }')">\(\widetilde{ac}\)</button>
-                    <button onclick="insert('\\utilde{ }')">\(\utilde{AB}\)</button>
-                    <button onclick="insert('\\overleftarrow{ }')">\(\overleftarrow{AB}\)</button>
-                    <button onclick="insert('\\underleftarrow{ }')">\(\underleftarrow{AB}\)</button>
-                    <button onclick="insert('\\overleftharpoon{ }')">\(\overleftharpoon{ac}\)</button>
-                    <button onclick="insert('\\underleftrigtharrow{ }')">\(\underleftrightarrow{AB}\)</button>
-                    <button onclick="insert('\\overleftrightarrow{ }')">\(\overleftrightarrow{AB}\)</button>
-                    <button onclick="insert('\\overline{ }')">\(\overline{AB}\)</button>
-                    <button onclick="insert('\\underline{ }')">\(\underline{AB}\)</button>
-                    <button onclick="insert('\\widecheck{ }')">\(\widecheck{ac}\)</button>
-                    <button onclick="insert('\\overgroup{ }')">\(\overgroup{AB}\)</button>
-                    <button onclick="insert('\\undergroup{ }')">\(\undergroup{AB}\)</button>
-                    <button onclick="insert('\\Overrightarrow{ }')">\(\Overrightarrow{AB}\)</button>
-                    <button onclick="insert('\\overrightarrow{ }')">\(\overrightarrow{AB}\)</button>
-                    <button onclick="insert('\\underrightarrow{ }')">\(\underrightarrow{AB}\)</button>
-                    <button onclick="insert('\\overrightharpoon{ }')">\(\overrightharpoon{ac}\)</button>
-                    <button onclick="insert('\\overbrace{ }')">\(\overbrace{AB}\)</button>
-                    <button onclick="insert('\\underbrace{ }')">\(\underbrace{AB}\)</button>
-                    <button onclick="insert('\\overlinesegment{ }')">\(\overlinesegment{AB}\)</button>
-                    <button onclick="insert('\\underlinesegment{ }')">\(\underlinesegment{AB}\)</button>
-                </div>
-            </div>
-        </div>
-
-        <div id="myModal03" class="modal">
-            <div class="modal-content">
-                <span class="close"> &times;</span>
-                <div class="btn-group">
-                    <button onclick="insert('\\lvert\\rvert')">\(\lvert\rvert\)</button>
-                    <button onclick="insert('\\lang\\rang')">\(\lang\rang\)</button>
-                    <button onclick="insert('\\lparen\\rparen')">\(\lparen\rparen\)</button>
-                    <button onclick="insert('\\lbrack\\rbrack')">\(\lbrack\rbrack\)</button>
-                    <button onclick="insert('\\lbrace\\rbrace')">\(\lbrace\rbrace\)</button>
-                    <button onclick="insert('\\vert')">\(\vert\)</button>
-                    <button onclick="insert('\\Vert')">\(\Vert\)</button>
-                    <button onclick="insert('\\lt\\gt')">\(\lt\gt\)</button>
-                    <button onclick="insert('\\lceil\\rceil')">\(\lceil\rceil\)</button>
-                    <button onclick="insert('\\lfloor\\rfloor')">\(\lfloor\rfloor\)</button>
-                    <button onclick="insert('\\lmoustache\\rmoustache')">\(\lmoustache\rmoustache\)</button>
-                    <button onclick="insert('\\lgroup\\rgroup')">\(\lgroup\rgroup\)</button>
-                    <button onclick="insert('\\ulcorner\\urcorner')">\(\ulcorner\urcorner\)</button>
-                    <button onclick="insert('\\llcorner\\lrcorner')">\(\llcorner\lrcorner\)</button>
-                    <button onclick="insert('\\llbracket\\rrbracket')">\(\llbracket\rrbracket\)</button>
-                    <button onclick="insert('\\lBrace\\rBrace')">\(\lBrace\rBrace\)</button>
-
-                </div>
-            </div>
-        </div>
-
-
-        <div id="myModal02" class="modal">
-            <div class="modal-content">
-                <span class="close"> &times;</span>
-                <div class="btn-group">
-                    <button onclick="insert('\\widehat{}')">\(\widehat{ac}\)</button>
-
-                </div>
-            </div>
-        </div>
-
-
-
-        <!-- <div id="myModal03" class="modal">
-            <div class="modal-content">
-                <span class="close"> &times;</span>
-                <p>Buttons</p>
-                <div class="btn-group">
-                    <button onclick="insert('\\')">\(\\)</button>
-                    <button onclick="insert('\\')">\(\\)</button>
-                    <button onclick="insert('\\')">\(\\)</button>
-                    <button onclick="insert('\\')">\(\\)</button>
-                    <button onclick="insert('\\')">\(\\)</button>
-                    <button onclick="insert('\\')">\(\\)</button>
-                    <button onclick="insert('\\')">\(\\)</button>
-                    <button onclick="insert('\\')">\(\\)</button>
-                    <button onclick="insert('\\')">\(\\)</button>
-                    <button onclick="insert('\\')">\(\\)</button>
-
-                </div>
-            </div>
-        </div> -->
-
+ 
 
     <script>
 
@@ -174,54 +143,9 @@
         }
 
 // Button 1: accents
-            var modal01 = document.getElementById("myModal01"); // Get the modal
-            var modal02 = document.getElementById("myModal02"); 
-            var modal03 = document.getElementById("myModal03"); 
-
             var btn01 = document.getElementById("myBtn01"); // Get the button that opens the modal
             var btn02 = document.getElementById("myBtn02"); 
             var btn03 = document.getElementById("myBtn03"); 
-
-            var span = document.getElementsByClassName("close"); // Get the <span> element that closes the modal
-            
-            btn01.onclick = function() {
-                modal01.style.display = "block";
-            } // When the user clicks the button, open the modal 
-            btn02.onclick = function() {
-                modal02.style.display = "block";
-            }  
-            btn03.onclick = function() {
-                modal03.style.display = "block";
-            }  
-
-
-
-
-            span[0].onclick = function() {
-                modal01.style.display = "none";
-            } // When the user clicks on <span> (x), close the modal
-            span[2].onclick = function() {
-                modal02.style.display = "none";
-            }
-            span[1].onclick = function() {
-                modal03.style.display = "none";
-            }
-            
-            
-
-            
-            window.onclick = function(event) {
-                if (event.target == modal01) {
-                    modal01.style.display = "none";
-                }
-                if (event.target == modal02) {
-                    modal02.style.display = "none";
-                }
-                if (event.target == modal03) {
-                    modal03.style.display = "none";
-                }
-            }// When the user clicks anywhere outside of the modal, close it
-
 
     </script>
     </body>
