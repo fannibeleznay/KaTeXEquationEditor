@@ -54,6 +54,7 @@ div {
     float: left; 
     height: 60px;
   }
+
 .btn-group:after {
     content: "";
     clear: both;
@@ -65,6 +66,10 @@ div {
   }
 .btn-group button:hover {
     background-color: lightslategray;
+  } 
+
+  .btn-group button:hover .tooltiptext {
+    visibility: visible;
   }
 
 /* MODAL/POPUPS */
@@ -105,3 +110,19 @@ div {
     text-decoration: none;
     cursor: pointer;
   }
+
+  
+  .btn-group button .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+
