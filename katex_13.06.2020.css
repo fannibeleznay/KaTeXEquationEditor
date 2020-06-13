@@ -1,0 +1,100 @@
+body{
+    background-color: whitesmoke;
+}
+
+div {
+    margin: 30px;
+}
+
+.top{
+    background-color: whitesmoke;
+    color: black;
+    padding: 20px;
+    border-color:black;
+    border-style: solid;
+    border-width: 2px;
+    display: block;
+}
+
+.input{
+    background-color: #204051;
+    color:white;
+    padding:10px;
+    min-height: 300px;
+    display: block;
+}
+
+#inputbox{
+    background-color: #204051;
+    color: white;
+    resize: none;
+    width: 100%;   
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    display: block;
+}
+
+
+.output{
+    background-color: #84A9AC;
+    color: black;
+    padding: 20px;
+    height: auto;
+    display: block;
+    
+}
+
+/* BUTTONS GROUPS */
+.btn-group button {
+    background-color: #3B6978; 
+    color: white;
+    padding: 10px 24px; 
+    cursor: pointer; 
+    float: left; 
+    height: 60px;
+    border-color: #204051;
+  }
+
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+.btn-group button:not(:last-child) {
+    border-right: none; 
+  }
+.btn-group button:hover {
+    background-color: #84A9AC;
+  } 
+
+  .btn-group button:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  td {
+    border: 1px solid #84A9AC;
+  }
+
+  table{
+    border-spacing: 2px;
+  }
+  td:hover {
+    background-color: #204051;
+    color: white;
+  }
+  
+  .btn-group button .tooltiptext {
+    visibility: hidden;
+    background-color: #E7Dfd5;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+
